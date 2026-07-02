@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Requests\Production;
+
+use App\Concerns\BatchValidationRules;
+use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Foundation\Http\FormRequest;
+
+class MixingRequest extends FormRequest
+{
+    use BatchValidationRules;
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return $this->mixingRules();
+    }
+}
